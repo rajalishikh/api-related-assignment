@@ -1,5 +1,5 @@
-const useData = async () => {
-  const loadData = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const useData = async (searchText) => {
+  const loadData = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
   const response = await loadData.json();
   // console.log(response.data);
   displayData(response.data);
@@ -8,13 +8,15 @@ const useData = async () => {
 const displayData = (data) => {
   console.log(data);
   // step 1 ,Find the div
-  const findDivContainer=document.getElementById('find-the-div')
+  const findDivContainer = document.getElementById('find-the-div');
+  // clear phone container cards before the search 
+  findDivContainer.innerHTML = '';
   data.forEach(phone => {
     console.log(phone);
     // step 2 create the div
     const createTheDiv = document.createElement('div');
     // step 3 give them input 
-    createTheDiv.classList = `card w-96 bg-base-100 shadow-xl`;
+    createTheDiv.classList = `card  bg-base-100 shadow-xl`;
     createTheDiv.innerHTML =`
     <figure><img src="${phone.image}" alt="Shoes" /></figure>
           <div class="card-body">
@@ -31,4 +33,18 @@ const displayData = (data) => {
   });
 }
 
-useData();
+// find the search item 
+const searchField = () => {
+  const searchField = document.getElementById('search-field');
+  const searchText1 = searchField.value;
+  console.log(searchText1)
+  useData(searchText1);
+  
+  
+}
+const addMoreButton = () => {
+  const my2ndSearchBar = document.getElementById('my-2nd-search');
+  const searchText2 = my2ndSearchBar.value;
+  useData(searchText2);
+}
+

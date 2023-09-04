@@ -18,8 +18,22 @@
       by injected humou.</p>
 
   </header>
+
   <main class="mt-24">
-    <section>
+    <!-- my first search bar -->
+    <section class="bg-slate-700 p-4 m-6">
+      <div>
+        <input id="search-field" type="text" placeholder="search Hear"
+          class="input input-bordered input-primary w-full max-w-xs" />
+        <button onclick="searchField()" class="btn btn-active btn-primary">Search</button>
+
+        <!-- my 2nd search bar  -->
+        <input id="my-2nd-search" type="text" placeholder="Search here" class="input w-full max-w-xs" />
+        <button onclick="addMoreButton()" class="btn btn-active btn-accent">Search </button>
+      </div>
+
+    </section>
+    <section class="container mx-auto mt-7">
       <div id="find-the-div" class="grid grid-cols-3 gap-4">
         <!-- <div class="card w-96 bg-base-100 shadow-xl">
           <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
