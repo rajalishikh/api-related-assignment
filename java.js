@@ -20,6 +20,9 @@ const displayData = (data) => {
           <div class="card-body">
             <h2 class="card-title">${phone.phone_name}</h2>
             <p>${phone.slug}</p>
+            <div class="card-actions justify-center">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
 
           </div>`
     // append the child 
