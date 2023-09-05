@@ -11,6 +11,18 @@ const displayData = (data) => {
   const findDivContainer = document.getElementById('find-the-div');
   // clear phone container cards before the search 
   findDivContainer.innerHTML = '';
+// show all button 
+   const showAllButton = document.getElementById('show-all-container');
+  if (data.length > 9) {
+    showAllButton.classList.remove('hidden');
+  }
+   else {
+    showAllButton.classList.add('hidden');
+    }
+
+
+  // limit of your phone 
+  data = data.slice(0, 10);
   data.forEach(phone => {
     console.log(phone);
     // step 2 create the div
@@ -47,4 +59,4 @@ const addMoreButton = () => {
   const searchText2 = my2ndSearchBar.value;
   useData(searchText2);
 }
-
+useData()
