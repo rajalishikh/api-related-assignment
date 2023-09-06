@@ -21,6 +21,8 @@
 
   <main class="mt-24">
     <!-- my first search bar -->
+
+
     <section class="bg-slate-700 p-4 m-6">
       <div>
         <input id="search-field" type="text" placeholder="search Hear"
@@ -28,13 +30,41 @@
         <button onclick="searchField()" class="btn btn-active btn-primary">Search</button>
 
         <!-- my 2nd search bar  -->
-        <input id="my-2nd-search" type="text" placeholder="Search here" class="input w-full max-w-xs" />
-        <button onclick="addMoreButton()" class="btn btn-active btn-accent">Search </button>
+        <!-- <input id="my-2nd-search" type="text" placeholder="Search here" class="input w-full max-w-xs" />
+        <button onclick="addMoreButton()" class="btn btn-active btn-accent">Search </button> -->
       </div>
 
 
     </section>
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="image-details">
+
+
+
+
+        </div>
+        <!-- <img src="" alt=""> -->
+        <!-- <h3 class="font-bold text-lg">Hello!</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p> -->
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+
+
     <section class="container mx-auto mt-7">
+      <!-- my loading bar  -->
+      <section class="text-center my-40 hidden" id="loading-bar">
+        <span class="loading loading-dots loading-lg bg-blue-800 font-bold text-4xl"></span>
+      </section>
       <div id="find-the-div" class="grid grid-rows-1 lg:grid-cols-3 gap-4 ">
         <!-- <div class="card w-96 bg-base-100 shadow-xl">
 
@@ -56,7 +86,7 @@
 
       </div>
     </section>
-    <div id="show-all-container" class="hidden">
+    <div id="show-all-container" class="hidden text-center my-8">
       <button class="btn btn-active btn-accent">show All</button>
 
     </div>
